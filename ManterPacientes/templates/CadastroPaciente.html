@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{%block Conteudo%}
+<h1>Cadastrar Paciente</h1>
+
+<form method="POST">
+{% csrf_token %}
+{{Formulario.as_p}}
+
+<button type="submit" class="btn btn-danger">Novo Paciente</a>
+</form>
+
+{%endblock%}
