@@ -2,4 +2,11 @@
 
 {%block Conteudo%}
 <h1>Alterar Paciente</h1>
+
+<form method="POST">
+    {% csrf_token %}
+    {{PacienteForm.as_p}}
+    
+    <button type="submit" class="btn btn-danger my-2">Salvar Alterações</a>
+    </form>
 {%endblock%}

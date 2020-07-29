@@ -3,8 +3,8 @@ from .import views
 
 urlpatterns = [
     # Home
-    path('', views.CadastroPaciente, name='CadastroPaciente'),
-    path('AlterarPaciente', views.AlterarPaciente, name='AlterarPaciente'),
-    path('VisualizarPaciente', views.VisualizarPaciente, name='VisualizarPaciente'),
-    path('ExcluirPaciente', views.ExcluirPaciente, name='ExcluirPaciente'),
+    path('CadastroPaciente', views.CadastroPaciente, name='CadastroPaciente'),
+    path('AlterarPaciente/<int:id>', views.AlterarPaciente, name='AlterarPaciente'),
+    path('', views.VisualizarPaciente, name='VisualizarPaciente'),
+    #path('ExcluirPaciente/<int:id>', views.ExcluirPaciente, name='ExcluirPaciente'),
 ]

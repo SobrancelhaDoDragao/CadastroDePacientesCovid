@@ -18,13 +18,27 @@ def CadastroPaciente(request):
         Formulario = PacienteForm()
         return render(request, 'CadastroPaciente.html',{'Formulario':Formulario})
 
-def AlterarPaciente(request):
-    return render(request, 'AlterarPaciente.html')
-
 def VisualizarPaciente(request):
     # Recuperando todos os pacientes do banco
     pacientes = Paciente.objects.all()
     return render(request, 'VisualizarPaciente.html',{'Pacientes':pacientes})
 
-def ExcluirPaciente(request):
-    return render(request, 'ExcluirPaciente.html')
+def AlterarPaciente(request,id):
+
+    # Recuperando um paciente especifico 
+    paciente = Paciente.objects.get(id=id)
+    # Salvando os dados do formulário
+    Formulario = PacienteForm(instance=paciente)
+
+    # Quando o formulário já foi submetido
+    if request.method == 'POST':
+        
+        Formulario = PacienteForm(request.POST, instance=paciente)
+
+        if Formulario.is_valid():
+            # Salvando dados do formulário no model corespondente 
+            Formulario.save()
+            return redirect("VisualizarPaciente")
+    else:
+        return render(request,'AlterarPaciente.html',{'PacienteForm':Formulario})
+
