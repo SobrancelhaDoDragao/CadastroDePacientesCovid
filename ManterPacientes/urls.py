@@ -6,5 +6,5 @@ urlpatterns = [
     path('CadastroPaciente', views.CadastroPaciente, name='CadastroPaciente'),
     path('AlterarPaciente/<int:id>', views.AlterarPaciente, name='AlterarPaciente'),
     path('', views.VisualizarPaciente, name='VisualizarPaciente'),
-    #path('ExcluirPaciente/<int:id>', views.ExcluirPaciente, name='ExcluirPaciente'),
+    path('ExcluirPaciente/<int:id>', views.ExcluirPaciente, name='ExcluirPaciente'),
 ]

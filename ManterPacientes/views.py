@@ -27,7 +27,7 @@ def AlterarPaciente(request,id):
 
     # Recuperando um paciente especifico 
     paciente = Paciente.objects.get(id=id)
-    # Salvando os dados do formulário
+    # Preenchendo os dados do formulário com os dados do paciente
     Formulario = PacienteForm(instance=paciente)
 
     # Quando o formulário já foi submetido
@@ -42,3 +42,8 @@ def AlterarPaciente(request,id):
     else:
         return render(request,'AlterarPaciente.html',{'PacienteForm':Formulario})
 
+def ExcluirPaciente(request,id):
+    paciente = Paciente.objects.get(id=id)
+    paciente.delete()
+
+    return redirect("VisualizarPaciente")
