@@ -6,6 +6,24 @@
 <div>
     <table class="table mt-3">
         <a class="btn btn-outline-danger" href="{% url 'CadastroPaciente' %}">Cadastrar Paciente</a>
+
+        {% if messages %}
+
+       
+        {% for message in messages %}
+
+        <div class="alert alert-danger alert-dismissible fade show mt-2" role="alert">
+            {{message}}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+        {% endfor %}
+       
+
+        {% endif%}
+
         <tr><th>Nome</th><th>Data de Nascimento</th><th>Tipo de Teste</th><th>Resultado</th><th style="text-align: center;"  colspan="2">Ações</th></tr>
 
         {% for Paciente in Pacientes %}

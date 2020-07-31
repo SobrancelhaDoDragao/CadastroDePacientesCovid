@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Paciente
 from .forms import PacienteForm
+from django.contrib import messages
 
 
 def CadastroPaciente(request):
@@ -45,5 +46,7 @@ def AlterarPaciente(request,id):
 def ExcluirPaciente(request,id):
     paciente = Paciente.objects.get(id=id)
     paciente.delete()
+
+    messages.info(request, 'Paciente deletado com sucesso')
 
     return redirect("VisualizarPaciente")
