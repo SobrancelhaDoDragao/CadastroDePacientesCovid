@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '_(=^lkcg!i0brd4=l%xj-)66ck5ib(!jm0%$qjhu#ee5qj24x#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["testeeudson.herokuapp.com"]
 
 
 # Application definition
