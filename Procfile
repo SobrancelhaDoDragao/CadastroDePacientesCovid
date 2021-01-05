@@ -1,1 +1,1 @@
-web:gunicorn CadastroDePacientesCovid.wsgi --log-file -
+web: gunicorn CadastroDePacientesCovid.wsgi
